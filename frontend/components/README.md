@@ -1,0 +1,1 @@
+we put here different pages in different folders. And inside folders we have html page + controller.
