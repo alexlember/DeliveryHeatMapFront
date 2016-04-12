@@ -15,5 +15,25 @@ heatMapModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider
             }
         })
 
+        .state('login', {
+            url: "/login",
+            views:{
+                'main':{
+                    templateUrl: "./components/login/login.html",
+                    controller: 'loginController'
+                }
+            }
+        })
+
+        .state('dashboard', {
+            url: "/dashboard",
+            views:{
+                'main':{
+                    templateUrl: "./components/dashboard/dashboard.html",
+                    controller: 'dashboardController'
+                }
+            }
+        })
+
     //$locationProvider.html5Mode(true);
 }]);

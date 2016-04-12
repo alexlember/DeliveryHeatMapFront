@@ -1,5 +1,18 @@
-$color: red;
+$grey: #f2f2f2;
+$lighter-grey: #e6e6e8;
+$dark-blue: #0B4F6C;
+$dark-black: #092327;
 
-a {
-  cursor: pointer;
+body{
+	background-color: $grey;
+	font-family: 'Lato', sans-serif;
+}
+
+h2{
+	color: $dark-black;
+}
+
+.row{
+	margin-left: 0;
+	margin-right: 0;
 }

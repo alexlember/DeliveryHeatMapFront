@@ -1,0 +1,31 @@
+.navigation-col{
+	height: 100vh;
+	background-color: $dark-blue;
+	padding-right: 0;
+	padding-left: 0;
+	padding-top: 50px;
+	border-right: 1px solid #ddd;
+}
+
+.nav-pills-style li a{
+	color: white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.nav-pills-style li{
+	border-bottom: 1px solid white;
+}
+
+.nav-pills-style li a:hover{
+	background-color: $dark-black;
+	color: white;
+}
+
+.nav-pills>li>a {
+	border-radius: 0;
+}
+
+.filters{
+	background-color: $dark-black;
+}
