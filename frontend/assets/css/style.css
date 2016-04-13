@@ -87,3 +87,7 @@ h2 {
 
 .filters {
   background-color: #092327; }
+
+.specific {
+  position: relative;
+  top: 100px; }

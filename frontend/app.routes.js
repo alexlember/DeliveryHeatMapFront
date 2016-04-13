@@ -35,5 +35,15 @@ heatMapModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider
             }
         })
 
+        .state('about', {
+            url: "/about",
+            views:{
+                'main':{
+                    templateUrl: "./components/about/about.html",
+                    controller: 'aboutController'
+                }
+            }
+        })
+
     //$locationProvider.html5Mode(true);
 }]);
