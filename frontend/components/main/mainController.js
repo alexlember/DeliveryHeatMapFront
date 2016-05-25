@@ -3,4 +3,7 @@
  */
 heatMapModule.controller('mainController',['$scope', '$state', function ($scope, $state) {
 
+    
+    
+    
 }]);

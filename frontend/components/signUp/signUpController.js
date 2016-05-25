@@ -1,31 +1,32 @@
 /**
- * Created by alembers on 4/11/16.
+ * Created by alembers on 5/23/16.
  */
-heatMapModule.controller('loginController',['$scope', '$state', '$window', 'HttpService', 'SharedService',
-                         function ($scope, $state, $window, HttpService, SharedService) {
+heatMapModule.controller('signUpController',['$scope', '$state', '$window', 'HttpService', function ($scope, $state, $window, HttpService) {
 
     $scope.email = '';
-    $scope.password = '';
+    $scope.userName = '';
+    $scope.password= '';
+    $scope.repeatPassword = '';
 
-    $scope.checkUserCredentials = function() {
+    $scope.addUser = function() {
 
 
-        console.log('user email: ' + $scope.email);
+        console.log('new user email: ' + $scope.email);
+        console.log('new user name: ' + $scope.userName);
         console.log('user password: ' + $scope.password);
+        console.log('user repeat password: ' + $scope.repeatPassword);
 
-        HttpService.checkUserCredentials(
+        HttpService.addUser(
             {
                 email: $scope.email,
+                userName: $scope.userName,
                 password: $scope.password
+
             },
             function (positiveResponse) {
                 console.log('http call post user succeed');
 
-                var Email = $scope.email;
-                var Password = $scope.password;
-                SharedService.data.user = $scope.email;
-
-                $window.location = '#/dashboard';
+                $window.location = '#/main';
             },
             function (negativeResponse) {
                 console.log('http call post user failed');
@@ -41,4 +42,5 @@ heatMapModule.controller('loginController',['$scope', '$state', '$window', 'Http
             }
         );
     };
+    
 }]);

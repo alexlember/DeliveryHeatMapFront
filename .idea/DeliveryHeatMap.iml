@@ -4,5 +4,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="DeliveryHeatMap node_modules" level="project" />
+    <orderEntry type="library" name="jquery-latest" level="application" />
   </component>
 </module>

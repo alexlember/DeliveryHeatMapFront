@@ -88,6 +88,10 @@ h2 {
 .filters {
   background-color: #092327; }
 
+.yamap {
+  height: 1000px;
+  width: 1000px; }
+
 .specific {
   position: relative;
   top: 100px; }

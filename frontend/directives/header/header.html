@@ -22,10 +22,16 @@
 
       <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">About</a></li> 
-            <li><a href="#">API</a></li> 
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#/login">Login</a></li> 
+            <li><a href="#">Start</a></li>
+            <li><a href="#">API</a></li>
+            <li>
+               <a href="#/signup" ng-show="shared.user === null">Sign Up</a>
+               <a ng-click="logOut()" ng-show="shared.user !== null">Log Out</a>
+            </li>
+            <li>
+               <a href="#/login" ng-show="shared.user === null">Login</a>
+               <a href="#/dashboard" ng-show="shared.user !== null">{{ shared.user }}</a>
+            </li>
          </ul>
       </div>
    </div>

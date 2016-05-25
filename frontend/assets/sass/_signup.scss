@@ -1,0 +1,21 @@
+.login-form{
+  position: relative;
+  top: 200px;
+}
+
+.input-container{
+  position: relative;
+  width: 50%;
+}
+
+.md-button.md-raised.submit-button{
+  background-color: $dark-blue;
+  color: white;
+  float: right;
+}
+
+.md-button.md-raised.submit-button:hover{
+  background-color: $dark-blue;
+  color: white;
+  float: right;
+}

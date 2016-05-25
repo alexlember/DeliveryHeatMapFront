@@ -25,6 +25,16 @@ heatMapModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider
             }
         })
 
+        .state('signup', {
+            url: "/signup",
+            views:{
+                'main':{
+                    templateUrl: "./components/signUp/signUp.html",
+                    controller: 'signUpController'
+                }
+            }
+        })
+
         .state('dashboard', {
             url: "/dashboard",
             views:{
