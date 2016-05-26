@@ -5,19 +5,10 @@
 
     var HttpService = function($http){
 
-        //this.getUsers = getUsers;
         this.addUser = addUser;
         this.checkUserCredentials = checkUserCredentials;
-        //this.delUser = delUser;
-        
-
-        // function getUsers(successCbk, errorCbk){
-        //
-        //     $http({
-        //         method: 'GET',
-        //         url: 'http://localhost:8000/internet_store/user/'
-        //     }).then(successCbk, errorCbk);
-        // }
+        this.buildHeatMap = buildHeatMap;
+        this.getFilters = getFilters;
 
         function addUser(config, successCbk, errorCbk){
 
@@ -50,20 +41,39 @@
             }).then(successCbk, errorCbk);
         }
 
-        // function delUser($scope, successCbk, errorCbk){
-        //
-        //     $http({
-        //         method: 'DELETE',
-        //         url: 'http://localhost:8000/internet_store/user/',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         data: {
-        //             'email': $scope.userToDelete
-        //         }
-        //     }).then(successCbk, errorCbk);
-        // }
+        function buildHeatMap(config, successCbk, errorCbk){
 
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8500/dhm/heat_map/',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    'fromDate': config.fromDate,
+                    'toDate': config.toDate,
+                    'reportType': config.reportType,
+                    'marketingSource': config.marketingSource,
+                    'productType': config.productType,
+                    'polygonSize': config.polygonSize,
+                    'user': config.user
+                }
+            }).then(successCbk, errorCbk);
+        }
+
+        function getFilters(config, successCbk, errorCbk){
+
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8500/dhm/filter_values/',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    'email': config.email
+                }
+            }).then(successCbk, errorCbk);
+        }
     };
 
     HttpService.$inject = ['$http'];

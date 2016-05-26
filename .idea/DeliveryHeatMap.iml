@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="DeliveryHeatMap node_modules" level="project" />
     <orderEntry type="library" name="jquery-latest" level="application" />
+    <orderEntry type="library" name="ya-map-2.1" level="application" />
   </component>
 </module>

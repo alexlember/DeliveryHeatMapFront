@@ -85,12 +85,65 @@ h2 {
 .nav-pills > li > a {
   border-radius: 0; }
 
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #092327; }
+
 .filters {
   background-color: #092327; }
 
-.yamap {
-  height: 1000px;
-  width: 1000px; }
+ya-map {
+  display: block;
+  position: relative;
+  height: calc(100vh);
+  width: 100%; }
+
+.hm-filters {
+  margin: 15px;
+  color: whitesmoke; }
+
+#from-date-picker, #to-date-picker {
+  background-color: #0B4F6C; }
+
+.custom-margin-map {
+  padding-left: 0;
+  padding-right: 0; }
+
+.legend {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  background-color: whitesmoke; }
+
+#btn-build {
+  background-color: #092327;
+  color: white; }
+
+.drd {
+  background-color: #092327;
+  color: white;
+  padding: 2px; }
+
+.drd:focus {
+  color: white;
+  padding: 2px; }
+
+.drd:active {
+  color: white;
+  padding: 2px; }
+
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #092327; }
+
+.leg {
+  background-color: #f2f2f2;
+  min-height: 40px;
+  color: black; }
+
+md-select:not([disabled]):focus .md-select-value {
+  color: white; }
 
 .specific {
   position: relative;

@@ -1,12 +1,78 @@
-<--heat-header></heat-header>
+<heat-header></heat-header>
 <div class="row">
-	<div class="col-md-2 navigation-col">
+	<div class="col-lg-2 col-xs-4 navigation-col">
 		<ul class="nav nav-pills nav-pills-style nav-stacked">
-			<li role="presentation"><a href="#/dashboard">Построить тепловую карту</a></li>
-			<!--li role="presentation"><a href="#">Gallery</a></li>
-			<li role="presentation"><a href="#">Analyzer</a></li-->
+			<li role="presentation"><a href="#/dashboard" data-toggle="collapse" data-target="#hm-filters">Построить тепловую карту</a></li>
+            <div class="hm-filters collapse out" id="hm-filters">
+                <div class="row from-date period">
+                    <h4>Начало периода:</h4>
+                    <md-datepicker id="from-date-picker" ng-model="fromDate" md-placeholder="Выберите дату"></md-datepicker>
+                </div>
+                <div class="row to-date period">
+                    <h4>Конец периода:</h4>
+                    <md-datepicker id="to-date-picker" ng-model="toDate" md-placeholder="Выберите дату"></md-datepicker>
+                </div>
+                <div class="row report-type">
+                    <h4>Тип отчета:</h4>
+                    <md-select ng-model="reportType" class="drd">
+                        <md-option ng-repeat="report in reportsTypes">{{report}}</md-option>
+                    </md-select>
+                </div>
+                <div class="row ms-type" ng-show="reportType === 'По источнику рекламы'">
+                    <h4>Источник рекламы:</h4>
+                    <md-select ng-model="marketingSource" class="drd" >
+                        <md-option ng-repeat="marketingSource in marketingSources">{{marketingSource}}</md-option>
+                    </md-select>
+                </div>
+                <div class="row product-type" ng-show="reportType === 'По типу продукта'">
+                    <h4>Тип продукта:</h4>
+                    <md-select ng-model="productType" class="drd">
+                        <md-option ng-repeat="productType in productTypes">{{productType}}</md-option>
+                    </md-select>
+                </div>
+                <div class="row polygon-sizes">
+                    <h4>Длина стороны полигона, м:</h4>
+                    <md-select ng-model="polygonSize" class="drd">
+                        <md-option ng-repeat="polygonSize in polygonSizes">{{polygonSize}}</md-option>
+                    </md-select>
+                </div>
+                <div class="row ">
+                    <md-button class="md-raised" id="btn-build" ng-click="buildHeatMap()">Построить отчет</md-button>
+                </div>
+            </div>
+			<li role="presentation"><a href="#/dashboard">Анализатор</a></li>
+			<li role="presentation"><a href="#/dashboard">История отчетов</a></li>
 		</ul>
 	</div>
-	<div class="col-md-10">
-	</div>
+    <div class="col-lg-10 col-xs-8 custom-margin-map">
+        <div id="map">
+            <ya-map ya-zoom="8" ya-center="[37.64,55.76]" ya-after-init="afterMapInit($target)"></ya-map>
+        </div>
+        <div class="row legend">
+            <div class="col-md-2" style="margin: 0px; padding: 0px">
+                <div style="background-color: red; opacity: 0.1; min-height: 20px"></div>
+                <div class="leg">1 значение</div>
+            </div>
+            <div class="col-md-2" style="margin: 0px; padding: 0px">
+                <div style="background-color: red; opacity: 0.2; min-height: 20px"></div>
+                <div class="leg">2 значение</div>
+            </div>
+            <div class="col-md-2" style="margin: 0px; padding: 0px">
+                <div style="background-color: red; opacity: 0.35; min-height: 20px"></div>
+                <div class="leg">3 значение</div>
+            </div>
+            <div class="col-md-2" style="margin: 0px; padding: 0px">
+                <div style="background-color: red; opacity: 0.5; min-height: 20px"></div>
+                <div class="leg">4 значение</div>
+            </div>
+            <div class="col-md-2" style="margin: 0px; padding: 0px">
+                <div style="background-color: red; opacity: 0.65; min-height: 20px"></div>
+                <div class="leg">5 значение</div>
+            </div>
+            <div class="col-md-2" style="margin: 0px; padding: 0px">
+                <div style="background-color: red; opacity: 0.8; min-height: 20px"></div>
+                <div class="leg">6 значение</div>
+            </div>
+        </div>
+    </div>
 </div>
